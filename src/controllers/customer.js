@@ -136,7 +136,8 @@ exports.insertCustomer = async (req, res) => {
       //Insert address TODO
       let addresses = req.body.address;
       let updateObj = {}
-      updateObj.address = [];
+      updateObj.address = req.body.address
+      /*
       for(let i=0;i<addresses.length; i++) {
           //Insert new address
           addresses[i].customerId = insertCustomer._id;
@@ -144,7 +145,7 @@ exports.insertCustomer = async (req, res) => {
           updated = await address.save();
           updateObj.address.push(updated._id);
       }
-
+      */
       let updateCustomer = await customer.findByIdAndUpdate(
         { _id: insertCustomer._id },
         { $set: updateObj },
