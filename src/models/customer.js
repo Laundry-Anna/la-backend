@@ -59,7 +59,7 @@ const customerSchema = new mongoose.Schema(
       type: ObjectId,
       ref: 'city',
     },
-    address: [{type: ObjectId,ref: 'address'}],
+    address: {type: ObjectId,ref: 'address'},
     status: {
       type: String,
       enum: ['Active', 'Inactive', 'Deleted'],
